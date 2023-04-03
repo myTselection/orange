@@ -15,8 +15,8 @@ This integration is in no way affiliated with Orange.
 
 <!-- Some discussion on this topic can be found within [the Home Assistant community forum](https://community.home-assistant.io/). -->
 
-<p align="center"><img src="https://raw.githubusercontent.com/myTselection/orange/master/icon.png"/></p>
-<p align="center"><img src="https://raw.githubusercontent.com/myTselection/orange/master/orange belgium.png"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/myTselection/orange/master/icon.png" width="100"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/myTselection/orange/master/orange belgium.png" width="100"/></p>
 
 
 ## Installation
