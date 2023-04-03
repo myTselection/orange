@@ -6,7 +6,7 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/myTselection/orange.svg)](https://github.com/myTselection/orange/commits/master)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/myTselection/orange.svg)](https://github.com/myTselection/orange/graphs/commit-activity)
 
-# Orange (Beta)
+# Orange (Alpha) NOT WORKING YET!
 [Orange](https://www.orange.be/) Home Assistant custom component. This custom component has been built from the ground up to bring your Orange mobile phone usage details into Home Assistant to help you towards a better follow up on your usage information. This integration is built against the public website provided by Orange Belgium.
 
 For now only **Belgian Mobile** subscriptions are supported (the only ones I have). Feel free to extend via pull request.
