@@ -49,10 +49,12 @@ class ComponentSession(object):
     # {"Message":"Authorization succes","ResultCode":0,"Object":{"Customer":{"CustomerNumber":9223283432,"Email":"eslkdjflksd@gmail.com","FirstName":"slfjs","Gender":null,"Id":3434,"Initials":"I","IsBusinessCustomer":false,"Language":"nl","LastName":"DSFSDF","PhoneNumber":"0412345678","Prefix":null,"RoleId":2},"Customers":[{"CustomerId":12345,"CustomerNumber":1234567890,"IsDefaultCustomer":true,"Msisdn":32412345678,"ProvisioningTypeId":1,"RoleId":2}],"CustomersCount":1}}
         # Get OAuth2 state / nonce
         header = {"Content-Type": "application/json"}
-        response = self.s.post(f"https://my.youfone.{self._country}/prov/MyYoufone/MyYOufone.Wcf/v2.0/Service.svc/json/login",data='{"request": {"Login": "'+username+'", "Password": "'+password+'"}}',headers=header,timeout=10)
-        _LOGGER.debug("youfone.be login post result status code: " + str(response.status_code) + ", response: " + response.text)
-        _LOGGER.debug("youfone.be login header: " + str(response.headers))
-        assert response.status_code == 200
+        response = self.s.post(f"https://sso.orange.be/auth/sm/login.fcc",data='{"target": "https://sso.orange.be/nl/home", "smauthreason": "/", "smretries": 0, "lang": "nl", "USER": "'+username+'", "PASSWORD": "'+password+'"}',headers=header,timeout=10,allow_redirects=False)
+        _LOGGER.debug("Orange login post result status code: " + str(response.status_code) + ", response: " + response.text)
+        _LOGGER.debug("Orange login header: " + str(response.headers))
+        # assert response.status_code == 307
+        
+        self.cookies = response.cookies
         self.userdetails = response.json()
         self.msisdn = self.userdetails.get('Object').get('Customers')[0].get('Msisdn')
         self.s.headers["securitykey"] = response.headers.get('securitykey')

@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /*.url
+/custom_components/orange/test.py
+/custom_components/orange/secret.py
